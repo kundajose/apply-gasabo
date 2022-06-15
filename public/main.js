@@ -1,3 +1,5 @@
+// https://apply-gasabo.herokuapp.com
+
 document.getElementById("deleteButton").addEventListener("click", deleteEntry);
 document.getElementById("updateButton").addEventListener("click", updateEntry);
 
