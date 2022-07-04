@@ -1,13 +1,11 @@
 const express = require("express");
 const app = express();
 const MongoClient = require("mongodb").MongoClient;
-const PORT = 8100;
+// const PORT = 8100;
 require("dotenv").config();
 
 let db,
-  dbConnectionStr = `mongodb+srv://iradukundajo123-:${encodeURIComponent(
-    "8hp3p7_q7iv#FfV"
-  )}@cluster0.lpxbzlt.mongodb.net/?retryWrites=true&w=majority`,
+  dbConnectionStr = process.env.DB_STRING,
   dbName = "star-trek-api";
 
 MongoClient.connect(dbConnectionStr, { useUnifiedTopology: true }).then(
@@ -121,5 +119,5 @@ app.delete("/deleteEntry", (request, response) => {
 });
 
 app.listen(process.env.PORT || PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+  console.log(`Server running on port`);
 });
